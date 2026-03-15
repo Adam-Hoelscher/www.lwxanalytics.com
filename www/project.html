@@ -44,8 +44,8 @@
 
     <div class="card">
 
-        <p>This website is the alternate Project 3 for the winter quarter of CSE P 561. The requirement was to "Build an
-            End-to-end personal website"</p>
+        <p>This website is the alternate Project 3 for the winter quarter of CSE P 561.</p>
+        <p>The requirement was to "Build an End-to-end personal website"</p>
         <link>This site is accessible at <a href="https://lwxanalytics.com">https://lwxanalytics.com</a>.</p>
 
         <h2>Notes</h2>
@@ -70,7 +70,8 @@
                     server<br><code>{"Type":"A", "Name":"lwxanalytics.com", "Content":"165.232.140.175"}</code></li>
                 <li>Direct www to the root domain<br><code>{"Type":"CNAME", "Name":"www", "Content":"@"}</code></li>
             </ul>
-            <li>In the process of setting up the site some <code>TXT</code> records were created as part of the CA
+            <li>In the process of setting up the site some <code>TXT</code> records were created as part of the TLS
+                certificate
                 request process (see below)</li>
             <li>Overall, this was fairly straight forward</li>
         </ul>
@@ -81,6 +82,13 @@
             <li>Let's Encrypt certificates are available via an automated process in GitHub pages. Unfortunately GitHub
                 pages was not a viable way to host this page (see below)</li>
             <li>The software <code>certbot</code> was used for the request</li>
+            <li>The way Let's Encrypt verifies ownership of a domain is elegant genius</li>
+            <ul>
+                <li>LC gives the user a 'verification token'; the user adds a <code>TXT</code> record to DNS with that
+                    token in it</li>
+                <li>It's the same basic idea as TFA; by creating the record, the user proves they are in control of the
+                    domain</li>
+            </ul>
             <li>Originally, I requested a certificate for <code>www.lwxanalytics.com</code></li>
             <li>Later, I decided that I wanted the site to also be available at <code>lwxanalytics.com</code>. That lead
                 me on a journey involving multiple requests, finally settling on a single cert that covers both</li>
@@ -96,9 +104,9 @@
                 <li>The server seems to be weaker than a G1 Raspberry Pi; I started the content development running VS
                     Code via SSH; after the 3rd time it locked up for over an hour, I switched tact</li>
             </ul>
-            <ul>The Droplet started with nothing but the OS on it; updating all the installed software and installing
+            <li>The Droplet started with nothing but the OS on it; updating all the installed software and installing
                 <code>nginx</code> was sufficient to allow it act as a server
-            </ul>
+            </li>
         </ul>
 
         <h4>Content</h4>
