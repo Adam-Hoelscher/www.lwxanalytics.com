@@ -38,11 +38,19 @@
 </head>
 
 <body>
+    <title>Adam Hoelscher</title>
 
-    <div class="card" , name="site-header"></div>
+    <div id="nav"></div>
+    <script>
+        fetch("nav.html")
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById("nav").innerHTML = html;
+            });
+    </script>
 
     <div class="card">
-        <h2>Welcome 2</h2>
+        <h2>Welcome</h2>
 
         <p>This small website demonstrates a simple static web server.
             The pages contain excerpts from application materials describing my

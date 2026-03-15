@@ -1,47 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Personal Statement</title>
 
-<style>
-body { font-family: Arial; margin: 40px; background:#f6f8fa; }
-nav a { margin-right:15px; text-decoration:none; color:#0366d6; font-weight:bold; }
-.card { background:white; padding:20px; border-radius:8px; max-width:800px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Statement</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background: #f6f8fa;
+        }
+
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #0366d6;
+            font-weight: bold;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
 <body>
 
-<h1>Personal Statement</h1>
+    <h1>Personal Statement</h1>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="personal.html">Personal Statement</a>
-<a href="academic.html">Academic Background</a>
-<a href="course.html">Single Course Background</a>
-</nav>
+    <div id="nav"></div>
+    <script>
+        fetch("nav.html")
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById("nav").innerHTML = html;
+            });
+    </script>
 
-<div class="card">
+    <div class="card">
 
-<p>I hold a bachelor’s degree in actuarial science and became an Associate of
-the Society of Actuaries in 2011. Later that year I also became a Member of
-the American Academy of Actuaries.</p>
+        <p>I hold a bachelor’s degree in actuarial science and became an Associate of
+            the Society of Actuaries in 2011. Later that year I also became a Member of
+            the American Academy of Actuaries.</p>
 
-<p>From 2005 to 2017 I worked in traditional actuarial roles related to
-healthcare and group benefits. Since 2018 I have worked as a data scientist
-at Vericity.</p>
+        <p>From 2005 to 2017 I worked in traditional actuarial roles related to
+            healthcare and group benefits. Since 2018 I have worked as a data scientist
+            at Vericity.</p>
 
-<p>I have always been fascinated by the power of mathematics and computers.
-These tools allow us to understand the world around us and shape it into the
-world we need.</p>
+        <p>I have always been fascinated by the power of mathematics and computers.
+            These tools allow us to understand the world around us and shape it into the
+            world we need.</p>
 
-<p>My actuarial background provides a strong statistical foundation for
-understanding modern artificial intelligence. Further study in computing
-technologies will deepen my ability to combine statistical reasoning with
-modern computational tools.</p>
+        <p>My actuarial background provides a strong statistical foundation for
+            understanding modern artificial intelligence. Further study in computing
+            technologies will deepen my ability to combine statistical reasoning with
+            modern computational tools.</p>
 
-</div>
+    </div>
 
 </body>
+
 </html>

@@ -1,61 +1,82 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Academic Background</title>
 
-<style>
-body { font-family: Arial; margin: 40px; background:#f6f8fa; }
-nav a { margin-right:15px; text-decoration:none; color:#0366d6; font-weight:bold; }
-.card { background:white; padding:20px; border-radius:8px; max-width:900px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Background</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background: #f6f8fa;
+        }
+
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #0366d6;
+            font-weight: bold;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 900px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
 <body>
 
-<h1>Academic Background</h1>
+    <h1>Academic Background</h1>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="personal.html">Personal Statement</a>
-<a href="academic.html">Academic Background</a>
-<a href="course.html">Single Course Background</a>
-</nav>
+    <div id="nav"></div>
+    <script>
+        fetch("nav.html")
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById("nav").innerHTML = html;
+            });
+    </script>
 
-<div class="card">
+    <div class="card">
 
-<p>My formal computer science education is limited, but my career has given me
-many opportunities to apply computer science concepts.</p>
+        <p>My formal computer science education is limited, but my career has given me
+            many opportunities to apply computer science concepts.</p>
 
-<h3>Formal Coursework</h3>
+        <h3>Formal Coursework</h3>
 
-<ul>
-<li>Information Technology Applications for Business (MS Office)</li>
-<li>Introduction to Computer Science (Java)</li>
-<li>Introduction to Actuarial Computing (VBA)</li>
-</ul>
+        <ul>
+            <li>Information Technology Applications for Business (MS Office)</li>
+            <li>Introduction to Computer Science (Java)</li>
+            <li>Introduction to Actuarial Computing (VBA)</li>
+        </ul>
 
-<h3>Independent Learning</h3>
+        <h3>Independent Learning</h3>
 
-<p>I began learning programming early, starting with QBasic as a child.
-Later I explored spreadsheets, SQL, and automation while working in
-actuarial roles.</p>
+        <p>I began learning programming early, starting with QBasic as a child.
+            Later I explored spreadsheets, SQL, and automation while working in
+            actuarial roles.</p>
 
-<h3>Professional Experience</h3>
+        <h3>Professional Experience</h3>
 
-<ul>
-<li>Developed optimized algorithms improving model runtime by 50×</li>
-<li>Built database-backed actuarial tools</li>
-<li>Implemented large-scale data preprocessing pipelines</li>
-<li>Learned R, Python, APIs, and cloud architecture</li>
-</ul>
+        <ul>
+            <li>Developed optimized algorithms improving model runtime by 50×</li>
+            <li>Built database-backed actuarial tools</li>
+            <li>Implemented large-scale data preprocessing pipelines</li>
+            <li>Learned R, Python, APIs, and cloud architecture</li>
+        </ul>
 
-<h3>Recent Work</h3>
+        <h3>Recent Work</h3>
 
-<p>Since transitioning to data science, I have worked on distributed systems,
-parallel processing pipelines, and optimization models deployed in AWS.</p>
+        <p>Since transitioning to data science, I have worked on distributed systems,
+            parallel processing pipelines, and optimization models deployed in AWS.</p>
 
-</div>
+    </div>
 
 </body>
+
 </html>
